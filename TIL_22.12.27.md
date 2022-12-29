@@ -76,7 +76,7 @@ Notion과 같은 메모/노트 필기 소프트웨어도 마크다운 기반 문
 >| Paragraph | Text |
 
 ## 텍스트 강조
-- 굵게(\*문자*), 기울임(\*\*문자**), 취소선(\~~문자~~)
+- 굵게(\*\*문자\*\*), 기울임(\*문자\*), 취소선(\~~문자~~)
 
 ## 수평선
 - \---로 작성
@@ -110,12 +110,14 @@ Notion과 같은 메모/노트 필기 소프트웨어도 마크다운 기반 문
 
 ## Git 명령어
 - $ git init: 로컬 저장소 생성
-- $ git add [file]
+- $ git add {file}
     - working directory상의 변경 내용을 staging area에 기록
     - staging area: 버전으로 기록하기 위한 파일 변경사항의 목록
 - $ git commit -m '<커밋메시지>'
     - staged 상태의 파일들을 커밋을 통해 버전으로 기록
 - $ git log(커밋 기록 조회)
+    - $ git log -- oneline
+    - $ git log -- oneline --graph
 - $ git status(파일 변경 상태)
 - 사용자 정보 입력
     - $ git config --global user.name "username"
@@ -124,4 +126,7 @@ Notion과 같은 메모/노트 필기 소프트웨어도 마크다운 기반 문
     - $ git config -l
     - $ git config --global -l
     - $ git config user.name
-
+- $ git restore -staged {file}
+    - add한 파일을 staging area에서 지우기
+- $ git restore {file}
+    - working directory상의 변경 내용을 취소하고 최신 커밋으로 되돌린다.

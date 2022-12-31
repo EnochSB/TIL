@@ -8,11 +8,16 @@
 - 원하는 직무를 알아야한다.
 
 ## MOOC
-1. Coursera
-2. Edx
-3. 
-4. K-MOOC
-5. Codecademy
+> MOOC을 통해 공고에는 있지만 나에게는 없는 지식을 습득.
+1. [Coursera](https://www.coursera.org/)
+2. [Edx - CS50](https://www.edx.org/)
+3. [Udacity](https://www.udacity.com/)
+4. [K-MOOC](http://www.kmooc.kr/)
+
+## 코딩플랫폼
+5. [Codecademy](https://www.codecademy.com/)
+3. [Code Avengers](https://www.codeavengers.com/)
+3. [Team Treehouse](https://teamtreehouse.com/)
 
 ## 포트폴리오 관리
 > 거창할 필요없이, 주변의 문제를 해결하는 프로젝트를 시작.

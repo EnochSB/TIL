@@ -17,7 +17,7 @@ students['홍길동'] = 80
 students['박영희'] = 95
 
 # 키-값 삭제
-students.pop['홍길동']
+students.pop('홍길동')
 
 # 딕셔너리 순회
 grades = {'john': 80, 'eric': 90}

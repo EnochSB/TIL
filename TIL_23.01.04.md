@@ -22,7 +22,7 @@ while <expression>:
     - 결과값(Output)
     ![function](/23.01.04/function_diagram.png)
 
-### [내장 함수](https://docs.python.org/ko/3/library/functions.html#sorted)
+### [내장 함수](https://docs.python.org/ko/3/library/functions.html)
 #### 자주 사용하는 함수
 - len(s)
     - 객체의 길이를 반환. 인자: 시퀀스/컬렉션

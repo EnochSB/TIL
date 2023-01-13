@@ -32,6 +32,8 @@
 ## 리스트 함수
 - sorted(iterable, /, *, key=None, reverse=False)
 - enumerate(iterable, start=0)
+    - iterable의 모든 객체를 (index, value)의 tuple로 구성된 열거 객체로 반환.
+    - start로 시작 숫자를 설정.
 - filter(function, iterable)
 ## 기타
 - bin(x)
@@ -46,3 +48,4 @@
     - 정수 i에 대응되는 유니코드 문자를 반환.
 
 - dir(object)
+    - 사용할 수 있는 속성을 확인.

@@ -103,7 +103,7 @@ IndexError: list_variable에는 3번째 인덱스가 없다.
 # 예제 9
 try:
     number = 1
-    if number == 1
+    if number == 1:
         print(number)
 except:
     print("에러가 발생했습니다.")

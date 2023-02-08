@@ -35,6 +35,9 @@
 |s.isupper()|대문자 여부(모두 대문자이면 True)|
 |s.islower()|소문자 여부(모두 소문자이면 True)|
 |s.istitle()|타이틀 형식 여부|
+|s.startswith(x)|문자열의 시작이 주어진 스트링 x와 일치하면 True|
+|s.endswith(x)|문자열의 끝이 주어진 스트링 s와 일치하면 True|
+
 #### 문자열 변경
 |문법|설명|
 |---|---|
@@ -51,7 +54,7 @@
 ### 리스트
 |문법|설명|
 |---|---|
-|L.appen(x)|마지막에 x 추가|
+|L.append(x)|마지막에 x 추가|
 |L.insert(i, x)|인덱스 i에 x를 삽입|
 |L.remove(x)|첫 번째 x를 제거 x가 없으면 ValuError|
 |L.pop()|마지막 항목 반환 후 제거|

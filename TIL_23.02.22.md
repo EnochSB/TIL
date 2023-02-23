@@ -1,4 +1,4 @@
-# Web - Fundamentals of HTML and CSS
+# 01. Web - Fundamentals of HTML and CSS
 ## 1. Introduction of web page
 - World Wide Web: 인터넷으로 연결된 컴퓨터들이 정보를 공유하는 거대한 정보 공간
 - Web site: 인터넷에서 여러개의 **Web page**가 모인 것. 사용자들에게 정보나 서비ㅓ스를 제공하는 공간

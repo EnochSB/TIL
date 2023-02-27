@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">  
+</head>
+
+<body>
+  <div class="container">
+    <img class="img" src="https://source.unsplash.com/random/?developer">
+    <img class="img" src="https://source.unsplash.com/random/?algorithm">
+    <img class="img" src="https://source.unsplash.com/random/?database">
+    <img class="img" src="https://source.unsplash.com/random/?html">
+    <img class="img" src="https://source.unsplash.com/random/?css">
+  </div>
+  <!-- 이하 우측 하단 고정 버튼을 생성하기 위한 HTML 마크업 -->
+  <div class="navigation">
+    <a href="#">
+      <i class="bi bi-caret-up-fill"></i>
+    </a>
+    <a href="#scrollbottom">
+      <i class="bi bi-caret-down-fill"></i>
+    </a>
+  </div>
+  <div id="scrollbottom"></div>
+</body>
+<style>
+  * {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  .img {
+    margin: auto;
+    display: block;
+    width: 720px;
+    height: auto;
+  }
+
+  /* 이하 우측 하단 고정 버튼을 생성하기 위한 CSS 작성 */
+  .navigation {
+    display: flex;
+    position: fixed;
+    right: 25px;
+    bottom: 40px;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1000;
+  }
+
+  .navigation a {
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    color: azure;
+    background-color: rgb(109, 109, 109);
+    border: 1px solid azure;
+  }
+</style>
+
+</html>

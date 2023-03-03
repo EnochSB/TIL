@@ -1,0 +1,127 @@
+@charset "utf-8";
+
+* {
+  box-sizing: border-box;
+}
+h1,
+h2 {
+  border-bottom: 1px solid black;
+}
+.my-page {
+  max-width: 100em;
+  min-width: 31.25em;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+}
+
+nav {
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+}
+
+.logo {
+  position: relative;
+  width: 222px;
+  height: 50px;
+}
+
+.logo--img {
+  float: left;
+  height: 100%;
+  margin-right: 10px;
+}
+
+.log--wiki {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-a {
+  box-sizing: content-box;
+  color: #3366CC;
+  outline: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.menu-a:visited {
+  color: #795cb2;
+}
+
+.article {
+  display: flex;
+}
+
+.sidebar {
+  width: 300px;
+  margin-top: 24px;
+  padding: 24px;
+  font-size: 14px;
+  color: #3366CC;
+  position: sticky;
+  top: 0;
+  height: 100px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.sidebar h2{
+  color: #54595d;
+  font-size: 14px;
+  border: none;
+}
+
+.sidebar p{
+  margin-bottom: 8px;
+  margin-top: 0px;
+}
+
+.outline{
+  border: 1px solid #a2a9b1;
+  float: right;
+  font-size: 14px;
+  line-height: 1.6;
+  background-color: #f8f9fa;
+}
+
+.outline--th{
+  text-align: left;
+  vertical-align: top;
+}
+
+.outline--title {
+  text-align: center;
+  background-color: gainsboro;
+  width: 400px;
+  height: 50px;
+  line-height: 1.3;
+}
+
+.outline--profile {
+  text-align: center;
+}
+
+.outline--img{
+  width: 380px;
+}
+
+.footer{
+  border-top: 1px solid black;
+  font-size: 14px;
+}

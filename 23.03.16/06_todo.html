@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" class="input-text">
+  <button id="btn">+</button>
+  <ul></ul>
+
+  <script>
+    const inputTag = document.querySelector('.input-text')
+    const btn = document.querySelector('#btn')
+    const ulTag = document.querySelector('ul')
+    const inputData = inputTag.value
+
+    const addTodo = (event) => {
+      if (inputData.trim()) {
+        const liTag = document.createElement('li')
+        liTag.textContent = inputData
+        ulTag.appendChild(liTag)
+        inputTag.value = ''
+      } else {
+        alert('입력이 필요합니다.')
+      }
+    }
+
+    btn.addEventListener('click', addTodo)
+  </script>
+
+</body>
+
+</html>

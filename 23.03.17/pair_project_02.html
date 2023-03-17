@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+  <button type="button" class="btn btn-primary">생성</button>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+  <script>
+    const numbers = _.range(1, 46)
+    const btnTag = document.querySelector('.btn')
+    const lotto = [11, 23, 25, 30, 32, 40]
+    const bonus = 42
+
+    btnTag.addEventListener('click', (event) => {
+      const six = _.sampleSize(numbers, 6)
+
+      // 반복문을 돌려서 몇개 일치하는지 확인
+      const matchNumber = six.filter(number => lotto.includes(number)).length
+
+      // 조건문으로 일치 개수에 따라 등수 저장
+      let rank = ''
+      if (matchNumber === 6) {
+        rank += '1등'
+      } else if (matchNumber === 5) {
+        if (six.includes(bonus)) {
+          rank += '2등'
+        } else {
+          rank += '3등'
+        }
+      } else if (matchNumber === 4) {
+        rank += '4등'
+      } else if (matchNumber === 3) {
+        rank += '5등'
+      } else {
+        rank += '꽝'
+      }
+
+      console.log(`당첨 번호 : ${lotto} 보너스 번호 : ${bonus} 랜덤 번호 : ${six} 등수 : ${rank}`)
+    })
+  </script>
+</body>
+</html>

@@ -7,6 +7,7 @@ $ python -m venv venv
 # 활성화
 $ source venv/Scirpts/activate
 # 소스 v/스크립트/액트
+# deactive로 비활성화
 ```
 
 ## 02. django 설치
@@ -45,6 +46,68 @@ $ python manage.py startapp appnames
 - 프로젝트 폴더 > settings.py > INSTALLED_APPS에 앱이름 작성
 - 앱을 생성한 후에 등록(반대는 불가)
 - local app, 3rd party app, 기본 django app 순서 권장
+
+## 08. Secretkey 환경변수
+- pip install django-environ
+- .env 파일 생성
+  ```env
+  DEBUG=on
+  SECRET_KEY=your-secret-key
+  DATABASE_URL=psql://user:un-githubbedpassword@127.0.0.1:8458/database
+  SQLITE_URL=sqlite:///my-local-sqlite.db
+  CACHE_URL=memcache://127.0.0.1:11211,127.0.0.1:11212,127.0.0.1:11213
+  REDIS_URL=rediscache://127.0.0.1:6379/1?client_class=django_redis.client.DefaultClient&password=ungithubbed-secret
+  ```
+- settings.py 조작
+  ```python
+  import environ
+  import os
+
+  env = environ.Env(
+      # set casting, default value
+      DEBUG=(bool, False)
+  )
+
+  # Set the project base directory
+  BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+  # Take environment variables from .env file
+  environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
+  # False if not in os.environ because of casting above
+  DEBUG = env('DEBUG')
+
+  # Raises Django's ImproperlyConfigured
+  # exception if SECRET_KEY not in os.environ
+  SECRET_KEY = env('SECRET_KEY')
+
+  # Parse database connection url strings
+  # like psql://user:pass@127.0.0.1:8458/db
+  DATABASES = {
+      # read os.environ['DATABASE_URL'] and raises
+      # ImproperlyConfigured exception if not found
+      #
+      # The db() method is an alias for db_url().
+      'default': env.db(),
+
+      # read os.environ['SQLITE_URL']
+      'extra': env.db_url(
+          'SQLITE_URL',
+          default='sqlite:////tmp/my-tmp-sqlite.db'
+      )
+  }
+
+  CACHES = {
+      # Read os.environ['CACHE_URL'] and raises
+      # ImproperlyConfigured exception if not found.
+      #
+      # The cache() method is an alias for cache_url().
+      'default': env.cache(),
+
+      # read os.environ['REDIS_URL']
+      'redis': env.cache_url('REDIS_URL')
+  }
+  ```
 
 ## 99. git 초기화시 주의사항
 - .gitignore 작성

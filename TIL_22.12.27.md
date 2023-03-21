@@ -126,7 +126,7 @@ Notion과 같은 메모/노트 필기 소프트웨어도 마크다운 기반 문
     - $ git config -l
     - $ git config --global -l
     - $ git config user.name
-- $ git restore -staged {file}
+- $ git restore --staged {file}
     - add한 파일을 staging area에서 지우기
 - $ git restore {file}
     - working directory상의 변경 내용을 취소하고 최신 커밋으로 되돌린다.

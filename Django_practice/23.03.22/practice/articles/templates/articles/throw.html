@@ -1,0 +1,14 @@
+{% extends 'articles/base.html' %}
+
+{% block content %}
+  <div class="container mt-4">
+    <form action="/catch/" method=GET class="row g-3">
+      <div class="col-auto">
+        <input type="text" class="form-control" name="message" id="message" placeholder="내용 입력">
+      </div>
+      <div class="col-auto">
+        <button type=submit class="btn btn-outline-primary">Throw</button>
+      </div>
+    </form>
+  </div>
+{% endblock content %}

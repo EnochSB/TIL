@@ -1,0 +1,12 @@
+{% extends 'articles/base.html' %}
+
+{% block content %}
+  <div class="container mt-4">
+    <ul class="list-unstyled">
+      {% for lotto in lotto_list %}
+        <li>{{ lotto }}</li>
+      {% endfor %}
+      <a href="/lotto-create/">뒤로 가기</a>
+    </ul>
+  </div>
+{% endblock content %}

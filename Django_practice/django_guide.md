@@ -109,6 +109,73 @@ $ python manage.py startapp appnames
   }
   ```
 
-## 99. git 초기화시 주의사항
+## 09. url 작성
+- 처음 요청이 들어오면 urls에서 맞는 경로로 분배해준다.
+- app 안에 있는 views를 import
+- urlpatterns 작성
+  ```python
+  from django.contrib import admin
+  from django.urls import path
+  from articles import views
+
+  urlpatterns = [
+      path('admin/', admin.site.urls),
+      path('index/', views.index, name='index'),
+  ]
+  ```
+- Variabl Routing(변수 넣기)
+  - \<path_converter:variable_name\>
+  ```python
+  path('articles/<int:num>/', views.hello)
+  ```
+  - converter는 str, int, slug, uuid, path 5종류. 선언안하면 기본으로 str이 됨.
+- URL mapping
+  - 여러 개의 app이 존재 할 때 하나의 urls.py에서 관리하지 않고 각 앱 폴더에 urls.py를 만들어 맵핑
+  ```python
+  from django.urls import path, include
+
+  urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('articles/', include('articles.urls')),
+    path('pages/', include('pages.urls'))
+  ]
+  ```
+  ```python
+  # articles/urls.py
+  from django.urls import path
+  from . import views
+
+  app_name = 'articles'
+  urlpatterns = [
+      path('index/', views.index, name='index'),
+      path('dinner/', views.dinner, name='dinner'),
+  ]
+  ```
+- 이름 지정
+  ```python
+  app_name = 'articles' # 앱 이름
+  urlpatterns = [
+      path('index/', views.index, name='index'),  # url 이름
+      path('dinner/', views.dinner, name='dinner'),
+  ]
+  ```
+  ```django html
+  {% url 'index' %}
+  {% url 'articles:index' %}
+  ```
+
+## 10. view 작성
+
+## 11. templates/앱이름 폴더 생성
+
+## 12. template 작성
+- template 상속
+
+## 13. 
+
+## 98. git 초기화시 주의사항
 - .gitignore 작성
   - gitignore.io에서 파일 생성
+
+## 99. 디버깅 정리
+- 

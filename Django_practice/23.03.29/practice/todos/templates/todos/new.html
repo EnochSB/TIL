@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>할 일 생성</h2>
+  <form action="{% url 'todos:create' %}" method=GET>
+    <div class="mb-3">
+      <label for="title" class="form-label">할 일 제목</label>
+      <input type="text" class="form-control" name="title" id="title">
+    </div>
+    <div class="mb-3">
+      <label for="content" class="form-label">할 일 내용</label>
+      <textarea class="form-control" name="content" id="content" cols="30" rows="10"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="priority" class="form-label">우선순위</label>
+      <select class="form-select" name="priority" id="priority">
+        <option selected>선택</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="datepicker" class="form-label">마감기한</label>
+      <input type="text" class="form-control" style="padding:0px; height: fit-content;" name="deadline" id="datepicker" placeholder="날짜 입력">
+    </div>
+    <button type="submit" class="btn btn-primary">할 일 생성</button>
+  </form>
+{% endblock content %}

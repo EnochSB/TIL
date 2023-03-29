@@ -208,14 +208,6 @@ $ python manage.py startapp appnames
           'BACKEND': 'django.template.backends.django.DjangoTemplates',
           'DIRS': [BASE_DIR / 'templates'],
           'APP_DIRS': True,
-          'OPTIONS': {
-              'context_processors': [
-                  'django.template.context_processors.debug',
-                  'django.template.context_processors.request',
-                  'django.contrib.auth.context_processors.auth',
-                  'django.contrib.messages.context_processors.messages',
-              ],
-          },
       },
   ]
   ```
@@ -269,6 +261,17 @@ $ python manage.py startapp appnames
   - app폴더 내에 admin.py
   - from .models import 모델명
   - admin.site.register(모델명)
+
+## ORM
+
+### 97. 날짜표시
+- settings.py의 LANGUAGE_COD와 TIME_ZONE변경(Internationalization)
+  ```python
+  LANGUAGE_CODE = 'ko-kr'
+
+  TIME_ZONE = 'Asia/Seoul'
+  ```
+
 
 ### 98. git 초기화시 주의사항
 - .gitignore 작성

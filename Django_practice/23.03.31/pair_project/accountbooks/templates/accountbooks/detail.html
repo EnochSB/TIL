@@ -1,0 +1,30 @@
+{% extends 'accountbooks/base.html' %}
+
+{% block style %}
+  <style>
+    a {
+      text-decoration : none;
+      color : black;
+    }
+  </style>
+{% endblock style %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg bg-body-tertiary mb-5">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'accountbooks:index' %}">가계부</a>
+  </div>
+</nav>
+<h2>{{ account.pk }} 번째 글</h2>
+<hr>
+<p>내용 : {{ account.note }}</p>
+<p>분류 : {{ account.category }}</p>
+<p>사용 금액 : {{ account.amount }}</p>
+<p>사용 날짜 : {{ account.date }}</p>
+<p>생성 날짜 : {{ account.created_at }}</p>
+<p>수정 날짜 : {{ account.updated_at }}</p>
+<p>메모 : {{ account.description }}</p>
+<a href="{% url 'accountbooks:edit' account.pk %}" class="btn btn-primary mb-3" role="button">가계부 수정</a>
+<a href="{% url 'accountbooks:delete' account.pk %}" class="btn btn-primary mb-3" role="button">가계부 삭제</a>
+<a href="{% url 'accountbooks:copy' account.pk %}" class="btn btn-primary mb-3" role="button">가계부 복사</a>
+{% endblock content %}

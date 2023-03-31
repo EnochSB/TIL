@@ -1,0 +1,73 @@
+{% extends 'accountbooks/base.html' %}
+
+{% block style %}
+<style>
+  a {
+    text-decoration : none;
+    color : black;
+  }
+</style>
+{% endblock style %}
+
+{% block content %}
+  <nav class="navbar navbar-expand-lg bg-body-tertiary mb-5">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'accountbooks:index' %}">가계부</a>
+      <a href="{% url 'accountbooks:new' %}">가계부작성</a>
+    </div>
+  </nav>
+  <form action="{% url 'accountbooks:index' %}" method="POST" class="p-3">
+    {% csrf_token %}
+    <div>
+      <label for="category_target" class="form-label">카테고리 정렬</label>
+      <select class="form-select" name="category_target" id="category_target" onchange="this.form.submit()">
+        <option selected>선택</option>
+        <option value="">전체</option>
+        <option value="생활비">생활비</option>
+        <option value="고정비용">고정비용</option>
+        <option value="경조사비">경조사비</option>
+        <option value="세금">세금</option>
+        <option value="저축">저축</option>
+        <option value="취미">취미</option>
+      </select>
+    </div>
+  </form>
+  <a href="?sort=amount&amount_order={{ amount_order }}{% if category_target %}&category_target={{ category_target }}{% endif %}">사용금액 {{ amount_order }}</a>
+  <a href="?sort=date&date_order={{ date_order }}{% if category_target %}&category_target={{ category_target }}{% endif %}">사용날짜 {{ date_order }}</a>
+  <br>
+  <div class="p-5">
+    {% for account in accounts %}
+      <a href="{% url 'accountbooks:detail' account.pk %}">
+        <div class="row text-center mb-5 m-auto p-3" style="width:80%">
+          <div class="col text-start">{{ account.note }}</div>
+          <div class="col" id="acc_cagegory">{{ account.category }}</div>
+          <div class="col text-end">{{ account.amount }}원</div>
+          <div class="col text-end">{{ account.date }}</div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+{% endblock content %}
+
+{% block script %}
+  <script>
+    const rows = document.querySelectorAll('.row')
+    rows.forEach((row) => {
+      category = row.querySelector('#acc_cagegory').textContent
+      if (category === "생활비") {
+        row.classList.add('bg-primary-subtle')
+      } else if (category === "고정비용") {
+        row.classList.add('bg-info')
+      } else if (category === "경조사비") {
+        row.classList.add('bg-body-secondary')
+      } else if (category === "세금") {
+        row.classList.add('bg-warning-subtle')
+      } else if (category === "저축") {
+        row.classList.add('bg-dark')
+        row.classList.add('text-white')
+      } else if (category === "취미") {
+        row.classList.add('bg-success-subtle')
+      }
+    })
+  </script>
+{% endblock script %}

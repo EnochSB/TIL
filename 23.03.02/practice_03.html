@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .nav {
+      border-bottom: 1.5px solid black;
+      position: sticky;
+      top: 0;
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem;
+      background-color: #fff;
+      z-index: 100;
+    }
+
+    .nav__logo {
+      flex-basis: content;
+      margin: 0;
+    }
+
+    .nav__logo--img {
+      width: 200px;
+    }
+
+    .nav__title {
+      margin-left: auto;
+      margin-bottom: 0;
+      flex-basis: content;
+    }
+
+    .nav__title--style {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 100px;
+    }
+
+    .phone {
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-basis: 300px;
+    }
+
+    .phone__name {
+      font-size: 30px;
+      font-weight: bold;
+      flex-basis: content;
+      text-align: center;
+    }
+
+    .phone__img {
+      width: 7rem;
+    }
+
+    .phone__sub {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .phone__infolist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      margin-top: 0;
+    }
+
+    .phone__infolist--content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px;
+    }
+
+    .phone__infolist--content p {
+      margin: 0;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <p class="nav__logo"><img src="04.png" alt="하이퍼그로스 " class="nav__logo--img"></p>
+    <p class="nav__title nav__title--style">Hyper S23</p>
+  </nav>
+  <main class="main">
+    <div class="phone">
+      <p class="phone__name">하이퍼 S23 Super</p>
+      <img src="03.png" alt="폰이미지" class="phone__img">
+      <p class="phone__sub">몰입형 게임 최적화</p>
+      <ul class="phone__infolist">
+        <li class="phone__infolist--content">
+          <p>화면크기</p>
+          <p>173.1 mm</p>
+        </li>
+        <li class="phone__infolist--content">
+          <p>3,088 x 1,440</p>
+          <p>(Quad HD+ 엣지 디스플레이)</p>
+        </li>
+        <li class="phone__infolist--content">
+          <p>최대밝기</p>
+          <p>1,750 니트</p>
+        </li>
+        <li class="phone__infolist--content">
+          <p>가변주사율</p>
+          <p>1~120 Hz</p>
+        </li>
+      </ul>
+    </div>
+    <div class="phone">
+      <p class="phone__name">하이퍼 S23+</p>
+      <img src="03.png" alt="폰이미지" class="phone__img">
+      <p class="phone__sub">야외에서도 뛰어난 선명도</p>
+      <ul class="phone__infolist">
+        <li class="phone__infolist--content">
+          <p>화면크기</p>
+          <p>166.5 mm</p>
+        </li>
+        <li class="phone__infolist--content">
+          <p>2,340 x 1,080</p>
+          <p>(FHD+ 플렛 디스플레이)</p>
+        </li>
+        <li class="phone__infolist--content">
+          <p>최대밝기</p>
+          <p>1,750 니트</p>
+        </li>
+        <li class="phone__infolist--content">
+          <p>가변주사율</p>
+          <p>48~120 Hz</p>
+        </li>
+      </ul>
+    </div>
+    <div class="phone">
+      <p class="phone__name">하이퍼 S23</p>
+      <img src="03.png" alt="폰이미지" class="phone__img">
+      <p class="phone__sub">야외에서도 뛰어난 선명도</p>
+      <ul class="phone__infolist">
+        <li class="phone__infolist--content">
+          <p>화면크기</p>
+          <p>153.9 mm</p>
+        </li>
+        <li class="phone__infolist--content">
+          <p>2,340 x 1,080</p>
+          <p>(FHD+ 플렛 디스플레이)</p>
+        </li>
+        <li class="phone__infolist--content">
+          <p>최대밝기</p>
+          <p>1,750 니트</p>
+        </li>
+        <li class="phone__infolist--content">
+          <p>가변주사율</p>
+          <p>48~120 Hz</p>
+        </li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>

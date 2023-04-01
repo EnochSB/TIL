@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .card {
+      border: 1px solid black;
+      display: flex;
+      width: 1300px;
+    }
+
+    .card__img {
+      position: relative;
+      flex: 1;
+    }
+
+    .card__img--profile {
+      width: 100%;
+    }
+
+    .card__img--flag {
+      position: absolute;
+      right: 0;
+      width: 20%;
+    }
+
+    .article {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+      width: 40%;
+    }
+    
+    .article__title {
+      font-size: 25px;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .article__title--name {
+      margin: 0;
+    }
+
+    .article__title--sub {
+      font-size: 15px;
+      margin-left: auto;
+      margin-bottom: 0;
+    }
+
+    .article__outline {
+      margin-top: 20px;
+    }
+
+    .list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .list__item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card__img">
+      <img class="card__img--profile" src="01.jpg" alt="버너스리">
+      <img class="card__img--flag" src="02.png" alt="영국국기">
+    </div>
+    <article class="article">
+      <header class="article__title">
+        <h1 class="article__title--name ">팀 버너스리</h1>
+        <h3 class="article__title--sub">프로그래머</h3>
+      </header>
+      <p class="article__outline">1989년 월드 와이드 웹의 하이퍼텍스트 시스템을 소안하여 개발. 웹의 아버지.</p>
+      <ul class="list">
+        <li class="list__item">
+          <p>국적</p><p>영국</p>
+        </li>
+        <li class="list__item">
+          <p>생년월일</p><p>1955년 6월 8일</p>
+        </li>
+        <li class="list__item">
+          <p>직업</p><p>전산과학자, 프로그래머, 교수</p>
+        </li>
+        <li class="list__item">
+          <p>출신 대학</p><p>옥스퍼드 대학교 물리학 학사</p>
+        </li>
+        <li class="list__item">
+          <p>추가 정보</p><p><a href="https://ko.wikipedia.org/wiki/%ED%8C%80_%EB%B2%84%EB%84%88%EC%8A%A4%EB%A6%AC">https://ko.wikipedia.org/wiki/팀_버너스리</a></p>
+        </li>
+      </ul>
+    </article>
+  </div>
+</body>
+</html>

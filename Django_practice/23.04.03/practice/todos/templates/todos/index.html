@@ -1,0 +1,15 @@
+{% extends 'todos/base.html' %}
+
+{% block content %}
+  <h1>Todo</h1>
+  <a href="{% url 'todos:create' %}">[NEW]</a>
+  <hr>
+  {% for todo in todos %}
+    <a href="{% url 'todos:detail' todo.pk %}">
+      <p>{{ todo.title }}</p>
+    </a>
+    <input type="checkbox" name="completed" {% if todo.completed %}checked{% endif %} onclick="location.href='{% url 'todos:check' todo.pk %}'">
+    <td><a href="{% url 'todos:check' todo.pk %}" class="btn btn-primary">완료</a>
+    <hr>
+  {% endfor %}
+{% endblock content %}

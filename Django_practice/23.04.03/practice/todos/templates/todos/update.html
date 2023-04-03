@@ -1,0 +1,11 @@
+{% extends 'todos/base.html' %}
+
+{% block content %}
+  <h2>할 일 수정</h2>
+  <form action="{% url 'todos:update' todo.pk %}" method=POST>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">할 일 수정</button>
+  </form>
+  <a href="{% url 'todos:index' %}">[back]</a>
+{% endblock content %}

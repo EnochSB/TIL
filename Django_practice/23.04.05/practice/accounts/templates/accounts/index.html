@@ -1,0 +1,27 @@
+{% extends 'accounts/base.html' %}
+{% block content %}
+  <h1>회원정보</h1>
+  {% comment %} 로그인 회원가입 {% endcomment %}
+  {% if request.user.is_authenticated %}
+    <form action="{% url 'accounts:logout' %}" method="POST">
+      {% csrf_token %}
+      <input type="submit" value="로그아웃">
+    </form>
+    <a href="{% url 'accounts:update' %}">[회원정보수정]</a>
+    <a href="{% url 'accounts:change_password' %}">[비밀번호수정]</a>
+
+    <form action="{% url 'accounts:delete' %}" method="POST">
+      {% csrf_token %}
+      <input type="submit" value="회원탈퇴">
+    </form>
+
+    <p>username: {{ user.username }}</p>
+    <p>email: {{ user.email }}</p>
+    <p>first_name: {{ user.first_name }}</p>
+    <p>last_name: {{ user.last_name }}</p>
+  {% else %}
+    <a href="{% url 'accounts:login' %}">[로그인]</a>
+    <a href="{% url 'accounts:signup' %}">[회원가입]</a>
+  {% endif %}
+
+{% endblock content %}

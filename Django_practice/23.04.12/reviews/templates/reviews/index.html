@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">제목</th>
+        <th scope="col">작성자</th>
+        <th scope="col">영화</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for review in reviews %}
+        <tr onClick=location.href="{% url 'reviews:detail' review.pk %}" style="cursor: pointer;">
+          <th scope="row">{{ review.pk }}</th>
+          <td>{{ review.title }}</td>
+          <td>{{ review.user }}</td>
+          <td>{{ review.movie }}</td>
+        </tr>
+      {% empty %}
+        <th scope="row">1</th>
+        <td>아직 리뷰가 없습니다.</td>
+        <td></td>
+        <td></td>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock content %}

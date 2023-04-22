@@ -1,0 +1,79 @@
+[
+{
+    "model": "articles.comment",
+    "pk": 1,
+    "fields": {
+        "article": 1,
+        "user": 3,
+        "content": "fsdafs",
+        "created_at": "2023-04-18T05:22:40.165Z",
+        "updated_at": "2023-04-18T05:22:40.165Z"
+    }
+},
+{
+    "model": "articles.comment",
+    "pk": 2,
+    "fields": {
+        "article": 1,
+        "user": 3,
+        "content": "asdfsf",
+        "created_at": "2023-04-18T05:22:42.047Z",
+        "updated_at": "2023-04-18T05:22:42.047Z"
+    }
+},
+{
+    "model": "articles.comment",
+    "pk": 3,
+    "fields": {
+        "article": 3,
+        "user": 4,
+        "content": "df",
+        "created_at": "2023-04-18T06:04:53.637Z",
+        "updated_at": "2023-04-18T06:04:53.637Z"
+    }
+},
+{
+    "model": "articles.comment",
+    "pk": 4,
+    "fields": {
+        "article": 3,
+        "user": 4,
+        "content": "fddffdf",
+        "created_at": "2023-04-18T06:04:54.844Z",
+        "updated_at": "2023-04-18T06:04:54.844Z"
+    }
+},
+{
+    "model": "articles.comment",
+    "pk": 5,
+    "fields": {
+        "article": 3,
+        "user": 4,
+        "content": "dfsafs",
+        "created_at": "2023-04-18T06:04:56.269Z",
+        "updated_at": "2023-04-18T06:04:56.269Z"
+    }
+},
+{
+    "model": "articles.comment",
+    "pk": 6,
+    "fields": {
+        "article": 3,
+        "user": 4,
+        "content": "dafsfsf",
+        "created_at": "2023-04-18T06:04:57.757Z",
+        "updated_at": "2023-04-18T06:04:57.757Z"
+    }
+},
+{
+    "model": "articles.comment",
+    "pk": 7,
+    "fields": {
+        "article": 3,
+        "user": 4,
+        "content": "kukfjgh",
+        "created_at": "2023-04-18T06:05:00.474Z",
+        "updated_at": "2023-04-18T06:05:00.474Z"
+    }
+}
+]

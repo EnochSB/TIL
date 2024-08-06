@@ -13,8 +13,7 @@ $ source venv/Scirpts/activate
 
 ### 02. django 설치
 ```bash
-$ pip install django==3.2.18
-# 3.2.18 = 최신버전
+$ pip install Django
 ```
 
 ### 03. 의존성 파일 생성
@@ -70,7 +69,7 @@ $ python manage.py startapp appnames
   )
 
   # Set the project base directory
-  BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+  BASE_DIR = Path(__file__).resolve().parent.parent
 
   # Take environment variables from .env file
   environ.Env.read_env(os.path.join(BASE_DIR, '.env'))

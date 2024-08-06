@@ -47,3 +47,15 @@
             - Hyper-V 관리도구, 플랫폼 체크
             - 재부팅
             
+## ec2
+1. ec2 인스턴스 생성
+2. ubuntu 원하는 버전 선택
+3. t2.micro 프리티어 선택
+4. 보안그룹 설정
+5. 시작
+6. 키페어 저장 후 인스턴스 시작
+7. 터미널에 ubuntu 시작 명령어 입력
+    ```bash
+    ssh -i <key path>ex)~/key.pem ubuntu@<ec2 ip4 퍼블릭 IP>
+    ssh -i HSB.pem ubuntu@3.106.87.11
+    ```

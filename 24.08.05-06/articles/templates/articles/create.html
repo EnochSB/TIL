@@ -8,7 +8,7 @@
 </head>
 <body>
   <h1>CREATE</h1>
-  <form action="{% url 'articles:create' %}" method="POST">
+  <form action="{% url 'articles:create' %}" method="POST" enctype="mulipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit">

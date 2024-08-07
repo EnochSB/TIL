@@ -13,6 +13,9 @@
   <p>내용: {{ article.content }}</p>
   <p>작성일: {{ article.created_at }}</p>
   <p>수정일: {{ article.updated_at }}</p>
+  {% if article.image %}
+    <img src="{{ article.image.url }}" alt="img">
+  {% endif %}
   <form action="{% url 'articles:delete' article.pk  %}" method="POST">
     {% csrf_token %}
     <input type="submit" value="삭제">

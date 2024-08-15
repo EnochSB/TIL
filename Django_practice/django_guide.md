@@ -263,6 +263,39 @@ $ python manage.py startapp appnames
 
 ## ORM
 
+
+### 96. fixtures
+- Django가 데이터베이스로 가져오는 방법을 알고 있는 데이터 모음
+- dumpdata: 데이터베이스의 모든 데이터 출력, 여러 모델을 하나의 json 파일로 만들 수도 있다.
+```bash
+$ python manage.py dumpdata --indent 4 app_name1.ModelName1 app_name1.ModelName2 app_name2.ModelName3 > data.json
+# indent는 들여쓰기를 추가. 4로 tab의 효과.
+$ python manage.py dumpdata --indent 4 > data.json
+# 모든 모델 한 번에
+```
+- loaddata: fixtures 데이터를 데이터베이스로 불러오기
+```bash
+$ python manage.py loaddata data1.json data2.json data3.json
+```
+- fixtures 경로
+  - django는 설치된 모든 app의 디렉토리에서 fixtures 폴더 이후의 경로로 파일을 찾아 load
+  - 거기도 없다면 settings.py의 FIXTURE_DIRS에 설정된 경로에서 찾는다.
+  - 명령어에 경로를 명시할 수도 있다.
+  ```bash
+    $ python manage.py loaddata foo/bar/mydata.json
+  ```
+- loaddata 순서 주의: 모델 관계에 따라 순서 중요
+- loaddata 시 encoding codec 에러
+  1. dumpdata 시 추가 옵션
+  ```bash
+  $ python -Xutf8 manage.py dumpdata [생략]
+  ```
+  2. 메모장활용
+    - 메모장으로 json 파일 열기
+    - 다른 이름 저장
+    - 인코딩을 UTF8로 선택 후 저장
+
+
 ### 97. 날짜표시
 - settings.py의 LANGUAGE_COD와 TIME_ZONE변경(Internationalization)
   ```python

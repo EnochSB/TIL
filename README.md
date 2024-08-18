@@ -103,5 +103,13 @@
 
 ## 백엔드
 
-### 23.03.20
-- [django 가상환경](23.03.20/)
+### Django
+- [django_guide](Django_practice/django_guide.md)
+
+- [django_channels](Django_practice/django_channels.md)
+
+- [django_thumbnail](Django_practice/thumbnail.md)
+
+## JAVA
+### 자바 입문
+- [자바](TIL_24.08.18.md)
